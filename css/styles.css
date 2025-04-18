@@ -143,7 +143,7 @@ img {
       rgba(46, 47, 66, 0.7)
     ),
     url("../images/people-office.jpg");
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   max-width: 1440px;
@@ -178,6 +178,7 @@ img {
   height: 56px;
 
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .solutions-button:focus,
 .solutions-button:hover {
@@ -264,10 +265,9 @@ img {
 }
 .team-list-item {
   background-color: #ffffff;
-
   justify-content: space-between;
   flex-direction: column;
-
+  border-radius: 0px 0px 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   gap: 24px;
@@ -294,9 +294,10 @@ img {
   align-items: center;
   justify-content: center;
   padding: 12px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-social-link:hover {
+.team-social-link:hover,
+.team-social-link:focus {
   background-color: #404bbf;
 }
 .team-social-svg {
@@ -400,11 +401,13 @@ img {
 }
 .lastinfo {
   background-color: #2e2f42;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  display: block;
   padding: 100px 0;
+}
+.container.lastinfo {
+  background-color: #2e2f42;
+  display: flex;
+  align-items: baseline;
 }
 .lastinfo-logo {
   font-family: "Raleway", sans-serif;
@@ -431,17 +434,19 @@ img {
 
   width: 264px;
 }
-.media-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.lastinfo-container {
+  margin-right: 120px;
 }
+.media-container {
+}
+
 .social {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
+  margin-bottom: 16px;
 }
 .last-social-list {
   list-style: none;
